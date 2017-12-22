@@ -3,6 +3,47 @@
 <html>
     <head>
         <style>
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #cc5350;
+  color: #fff;
+  z-index: 1000;
+  height: 125px;
+  overflow: hidden;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
+  text-align: center;
+  line-height: 80px;
+}
+.header.shrink {
+  height: 60px;
+  line-height: 45px;
+}
+.header h1 {
+  font-size: 30px;
+  font-weight: normal;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header.shrink h1 {
+  font-size: 24px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.content {
+  height: 2000px;
+  /*just to get the page to scroll*/
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -91,9 +132,32 @@ $(function(){
     $('#fill').css('height', $window_size).append("<div class='downarrow'><a href='#underneath'>&darr;</a></div>");
     $('#underneath').append("<div class='backtotop'><a href='#fill'>&uarr;</a></div>")
 });
+
+
+$(function(){
+ var shrinkHeader = 200;
+  $(window).scroll(function() {
+    var scroll = getCurrentScroll();
+      if ( scroll >= shrinkHeader ) {
+           $('.header').addClass('shrink');
+        }
+        else {
+            $('.header').removeClass('shrink');
+        }
+  });
+function getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    }
+});
+
 </script>
     </head>
     <body>
+
+        <div class="header">
+  <h1>Animated Fixed Header (Scroll Down)</h1>
+</div>
+<div class="content">
     <div class="hero" id="fill">
   <h1>Top to Bottom</h1>
 </div>
@@ -114,6 +178,8 @@ $(function(){
     <p>Voluptatibus possimus officia laboriosam molestias praesentium quo saepe est consectetur illum quia laudantium architecto sint ex rem pariatur quidem velit blanditiis suscipit. Molestias hic adipisci nisi aperiam consequuntur eaque eius.</p>
     <p>Dolorum odio ducimus alias excepturi vel voluptatem quis aut repellendus laudantium sunt quod unde aliquid ipsum ea hic officia blanditiis totam nisi deleniti quasi voluptatum fugiat error cum. Eaque earum.</p>
   </article>
+</div>
+
 </div>
     </body>
 </html>
