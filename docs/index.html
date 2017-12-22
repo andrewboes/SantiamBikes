@@ -2,46 +2,52 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        
+        <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+
+
         <style>
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #cc5350;
-  color: #fff;
-  z-index: 1000;
-  height: 125px;
-  overflow: hidden;
-  -webkit-transition: height 0.3s;
-  -moz-transition: height 0.3s;
-  transition: height 0.3s;
-  text-align: center;
-  line-height: 80px;
+            body {
+  padding-top: 50px;
 }
-.header.shrink {
-  height: 60px;
-  line-height: 45px;
+
+nav a {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  font-size: 18px;
 }
-.header h1 {
+
+nav .navbar-toggle {
+  margin: 13px 15px 13px 0;
+}
+
+.navbar-brand {
   font-size: 30px;
-  font-weight: normal;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
-.header.shrink h1 {
-  font-size: 24px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.content {
-  height: 2000px;
-  /*just to get the page to scroll*/
+nav.navbar.shrink {
+  min-height: 35px;
 }
 
+nav.shrink a {
+    
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-size: 15px;
+}
+
+nav.shrink .navbar-brand {
+  font-size: 25px;
+}
+
+nav.shrink .navbar-toggle {
+  padding: 4px 5px;
+  margin: 8px 15px 8px 0;
+}
 
 
 * {
@@ -119,7 +125,11 @@
 }
 </style>
 
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+        <script type='text/javascript' src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script>
     /*function toptobottom() {
   var $window_size = $(window).height();
@@ -127,37 +137,48 @@
 };*/
 
 $(function(){
-    var $window_size = $(window).height();
+    var $window_size = $(window).height()-50;
     console.log($window_size);
     $('#fill').css('height', $window_size).append("<div class='downarrow'><a href='#underneath'>&darr;</a></div>");
     $('#underneath').append("<div class='backtotop'><a href='#fill'>&uarr;</a></div>")
 });
 
 
-$(function(){
- var shrinkHeader = 200;
-  $(window).scroll(function() {
-    var scroll = getCurrentScroll();
-      if ( scroll >= shrinkHeader ) {
-           $('.header').addClass('shrink');
-        }
-        else {
-            $('.header').removeClass('shrink');
-        }
-  });
-function getCurrentScroll() {
-    return window.pageYOffset || document.documentElement.scrollTop;
-    }
+  $(document).ready(function() {
+        
+            $(window).scroll(function() {
+  if ($(document).scrollTop() > 200) {
+    $('nav').addClass('shrink');
+  } else {
+    $('nav').removeClass('shrink');
+  }
 });
-
+        
+        });
 </script>
     </head>
     <body>
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav pull-right">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
 
-        <div class="header">
-  <h1>Animated Fixed Header (Scroll Down)</h1>
-</div>
-<div class="content">
+<div class="container-full">
     <div class="hero" id="fill">
   <h1>Top to Bottom</h1>
 </div>
@@ -179,7 +200,6 @@ function getCurrentScroll() {
     <p>Dolorum odio ducimus alias excepturi vel voluptatem quis aut repellendus laudantium sunt quod unde aliquid ipsum ea hic officia blanditiis totam nisi deleniti quasi voluptatum fugiat error cum. Eaque earum.</p>
   </article>
 </div>
-
-</div>
+</div><!-- /.container -->
     </body>
 </html>
