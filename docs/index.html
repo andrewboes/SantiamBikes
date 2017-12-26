@@ -11,7 +11,7 @@
   <style>
   
    body {
-    min-height: 75rem;
+    min-height: 125rem;
 }
 .starter-template {
   padding: 3rem 1.5rem;
@@ -36,10 +36,61 @@ padding-right: 20px;
     height: 100vh;
     padding-top: 120px;
     background-image: url("images/wood.jpg");
-        background-size:     cover;                      /* <------ */
+    background-size:     cover;                      /* <------ */
     background-repeat:   no-repeat;
     background-position: center center; 
 }
+
+.jumbotronTitle{
+  font-weight: bold;
+}
+
+.fronttext
+{
+  color: white;
+padding-top: 50px;
+  
+}
+
+.fromBody {
+  /* padding: 2em 5em; */
+  font: normal 40px/50px Arial, sans-serif;
+} 
+.scrollingHeader {
+  height: 50px;
+  float: left;
+  margin-right: 0.3em;
+  /* padding: 2em 5em; */
+}
+.scrollingText {
+  float: left;
+  overflow: hidden;
+  /* position: relative; */
+  height: 50px;
+}
+span1 {
+display: inline-block;
+color: #e74c3c;
+position: relative;
+white-space: nowrap;
+top: 0;
+left: 0;
+text-align: center;
+-webkit-animation: move 6s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-delay: 1s;
+/* -webkit-animation-fill-mode: forwards; */
+}
+
+@keyframes move {
+0%  { top: 0px; }
+20% { top: -50px; }
+40% { top: -100px; }
+60% { top: -150px; }
+80% { top: -200px; }
+/* 100% { top: -250px; } add this and fil-mode forwards to have loop only once and end on last frame*/
+}
+
 </style>
   </head>
   <body>
@@ -54,19 +105,11 @@ copy https://www.whistlerblackcomb.com/ -->
 
 
 
-
-
-
-
-
-
-
-
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-transparent">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-       <a class="navbar-brand" href="#"><img src="images/LOGO_318.png" width="80px" height="75px" ></a>
+       <a class="navbar-brand" href="#"><img src="images/LOGO_318 2.png" width="80px" height="75px" ></a>
 
       <div class="collapse navbar-collapse " id="navbarsExampleDefault">
         <ul class="navbar-nav mx-auto">
@@ -103,11 +146,24 @@ copy https://www.whistlerblackcomb.com/ -->
     </nav>
 
       <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">Hello, world!</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <div class="container fronttext">
+          <h1 class="jumbotronTitle">Salem's Local Bike Shop Since 1994</h1>
+          <div class='fromBody'>
+            <span class='scrollingHeader'>We're here for all your </span>
+            <b class='scrollingText'>
+              <span1>
+                mountain bike<br />
+                bmx bike<br/>
+                road bike<br/>
+                cyclecross<br />
+                commuter<br />
+              </span1>
+            </b>
+            <span class='scrollingHeader'> &nbsp; needs </span>
+          </div>
         </div>
+        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+        
       </div>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
