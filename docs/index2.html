@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Santiam Bikes (beta)</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<style>
+
+		body {
+			min-height: 125rem;
+		}
+
+		.starter-template {
+			padding: 3rem 1.5rem;
+			text-align: center;
+		}
+
+		.bg-transparent {
+			background-color: rgba(0,0,0,0.6);
+			;
+		}
+
+		.navbar-brand {
+			margin-left: 50px !important;
+		}
+
+		.nav-item {
+			font-size: 20px;
+			padding-right: 20px;
+		}
+
+		.jumbotron {
+			height: 100vh;
+			padding-top: 120px;
+			background-image: url("images/wood.jpg");
+			background-size: cover; /* <------ */
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+		.jumbotronTitle {
+			font-weight: bold;
+		}
+
+		.fronttext {
+			color: white;
+			padding-top: 50px;
+		}
+
+		.fromBody {
+			/* padding: 2em 5em; */
+			font: normal 40px/50px Arial, sans-serif;
+		}
+
+		.scrollingHeader {
+			height: 50px;
+			float: left;
+			margin-right: 0.3em;
+			/* padding: 2em 5em; */
+		}
+
+		.scrollingText {
+			float: left;
+			overflow: hidden;
+			/* position: relative; */
+			height: 50px;
+		}
+
+		span1 {
+			display: inline-block;
+			color: #e74c3c;
+			position: relative;
+			white-space: nowrap;
+			top: 0;
+			left: 0;
+			text-align: center;
+			-webkit-animation: move 6s;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-delay: 1s;
+			/* -webkit-animation-fill-mode: forwards; */
+		}
+
+		@keyframes move {
+			0% {
+				top: 0px;
+			}
+
+			20% {
+				top: -50px;
+			}
+
+			40% {
+				top: -100px;
+			}
+
+			60% {
+				top: -150px;
+			}
+
+			80% {
+				top: -200px;
+			}
+			/* 100% { top: -250px; } add this and fil-mode forwards to have loop only once and end on last frame*/
+		}
+	</style>
+</head>
+<body>
+
+
+	<!--
+	copy https://www.whistlerblackcomb.com/ -->
+
+
+
+
+
+
+	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-transparent">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#"><img src="images/LOGO_318 2.png" width="80px" height="75px"></a>
+
+		<div class="collapse navbar-collapse " id="navbarsExampleDefault">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Inventory</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Service</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">The Crew</a>
+				</li>
+				<!-- <li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li> -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" href="#">Hours</a>
+						<a class="dropdown-item" href="#">Location</a>
+						<a class="dropdown-item" href="#">Contact</a>
+						<a class="dropdown-item" href="#">History</a>
+					</div>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search">
+				<button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="container fronttext">
+			<h1 class="jumbotronTitle">Salem's Local Bike Shop Since 1994</h1>
+			<div class='fromBody'>
+				<span class='scrollingHeader'>We're here for all your </span>
+				<b class='scrollingText'>
+					<span1>
+						mountain bike<br />
+						bmx bike<br />
+						road bike<br />
+						cyclecross<br />
+						commuter<br />
+					</span1>
+				</b>
+				<span class='scrollingHeader'> &nbsp; needs </span>
+			</div>
+		</div>
+		<!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+
+	</div>
+
+	<!-- jQuery first, then Tether, then Bootstrap JS. -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>
